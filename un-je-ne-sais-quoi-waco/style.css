@@ -1,0 +1,381 @@
+/* ============================================================
+   Un je ne sais Quoi... — v3
+   Design language: quiet French editorial. Deep bottle green +
+   pale sage paper + near-black ink. One accent, one type pairing
+   (Playfair Display / Manrope), no illustration, no marquee,
+   no monospace-ticket motif. Typography and whitespace carry
+   the page; the only "image" on the site is a real embedded map.
+   ============================================================ */
+
+:root{
+  --bg: #f2f4ee;
+  --bg-elevated: #ffffff;
+  --ink: #16211c;
+  --ink-soft: #4a5a4f;
+  --accent: #1f4436;
+  --accent-contrast: #f5f7f1;
+  --border: rgba(22,33,28,0.16);
+  --radius: 6px;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --nav-h: 68px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --max: 780px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #101d17;
+    --bg-elevated: #15251d;
+    --ink: #edf1ea;
+    --ink-soft: #a7bcac;
+    --accent: #7fb69a;
+    --accent-contrast: #0d1712;
+    --border: rgba(237,241,234,0.16);
+  }
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+}
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+h1, h2{
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  z-index: 200;
+}
+.skip-link:focus{ left: 16px; top: 16px; }
+
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============ NAV ============ */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner{
+  max-width: 1040px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.nav-actions{
+  display: flex;
+  gap: 24px;
+}
+.nav-link{
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease);
+}
+.nav-link:hover{ border-color: var(--accent); }
+
+/* ============ HERO ============ */
+.hero{
+  padding: 88px 24px 64px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.hero-inner{
+  max-width: 760px;
+}
+.hero h1{
+  font-size: clamp(2.1rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.01em;
+}
+.hero-sub{
+  margin: 22px 0 0;
+  max-width: 46ch;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+}
+.hero-actions{
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: transform 0.15s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.btn:active{ transform: translateY(1px) scale(0.99); }
+
+.btn-primary{
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+.btn-primary:hover{ transform: translateY(-1px); }
+
+.btn-secondary{
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border);
+}
+.btn-secondary:hover{ border-color: var(--accent); transform: translateY(-1px); }
+
+/* ============ ORNAMENT ============ */
+.ornament{
+  display: flex;
+  justify-content: center;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  padding: 8px 0 8px;
+}
+
+/* ============ PHILOSOPHY ============ */
+.philosophy{
+  padding: 40px 24px 88px;
+}
+.philosophy-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align: center;
+}
+.pull{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 34ch;
+  color: var(--ink);
+}
+.philosophy-body{
+  margin: 28px auto 0;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+/* ============ VISIT ============ */
+.visit{
+  padding: 0 24px 100px;
+}
+.visit-inner{
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.visit h2{
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  margin-bottom: 36px;
+}
+
+.visit-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.visit-panel{
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.rating-block{
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.rating-num{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.rating-detail{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stars{
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+.rating-link{
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--ink-soft);
+}
+.rating-link:hover{ color: var(--accent); }
+
+.info-list{
+  margin: 0;
+}
+.info-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.info-row:last-child{ border-bottom: none; }
+.info-row dt{
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+.info-row dd{
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+.info-row dd a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.info-row dd a:hover{ color: var(--accent); }
+
+.hours-note{
+  margin: 24px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.visit-map{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 320px;
+}
+.visit-map iframe{
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  display: block;
+  filter: grayscale(0.15) contrast(1.02);
+}
+
+/* ============ FOOTER ============ */
+.site-footer{
+  border-top: 1px solid var(--border);
+  padding: 48px 24px 56px;
+}
+.footer-inner{
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-name{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+.footer-line{
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+.footer-line a{ text-decoration: underline; text-underline-offset: 3px; }
+.footer-note{
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ============ REVEAL MOTION ============ */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity: 1; transform: none; transition: none; }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 760px){
+  .visit-grid{
+    grid-template-columns: 1fr;
+  }
+  .visit-panel{ padding: 28px 22px; }
+  .visit-map{ min-height: 260px; }
+  .visit-map iframe{ min-height: 260px; }
+  .hero{ padding: 56px 20px 48px; }
+  .philosophy{ padding: 28px 20px 64px; }
+  .visit{ padding: 0 20px 72px; }
+}
+
+@media (max-width: 420px){
+  .rating-block{ flex-wrap: wrap; }
+  .info-row{ flex-direction: column; gap: 4px; }
+  .info-row dd{ text-align: left; }
+}
