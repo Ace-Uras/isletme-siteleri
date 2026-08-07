@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosarita's Mexican Cantina · East Knoxville, TN</title>
+  <meta name="description" content="Rosarita's Mexican Cantina, 2816 E Magnolia Ave, Knoxville TN. Fajitas, birria quesatacos and margaritas. Dine in, takeout and delivery, open every day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="topbar-name" href="#top">Rosarita's</a>
+    <a class="topbar-phone" href="tel:+18659100687">(865) 910-0687</a>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Mexican cantina · East Knoxville</p>
+        <h1 class="hero-sign" aria-label="Rosarita's">
+          <svg viewBox="0 0 640 200" role="img" aria-hidden="true" focusable="false">
+            <path id="sign-arc" d="M 30 178 Q 320 30 610 178" fill="none"></path>
+            <text class="sign-text">
+              <textPath href="#sign-arc" startOffset="50%" text-anchor="middle">ROSARITA&#8217;S</textPath>
+            </text>
+          </svg>
+          <span class="sr-only">Rosarita's</span>
+        </h1>
+        <p class="hero-sub">Steak fajitas, birria and cold margaritas on Magnolia Avenue. Table service, takeout and delivery, seven days a week.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="tel:+18659100687">Call to order</a>
+          <a class="btn btn-line" href="#menu">Menu highlights</a>
+        </div>
+      </div>
+      <div class="hero-plate">
+        <figure class="plate">
+          <img src="fotograflar/foto-1.jpg" alt="Grilled chicken, shrimp and sliced avocado served on a red plate at Rosarita's" width="880" height="1080">
+        </figure>
+        <p class="plate-badge"><strong>4.9</strong><span>on Google</span></p>
+      </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section class="menu" id="menu">
+      <div class="menu-head">
+        <h2>From the kitchen</h2>
+        <p>A few of the plates from the menu. The full menu is at the counter, or on <a href="https://www.doordash.com/store/rosaritas-mexican-cantina-knoxville-40740891/" rel="noopener">DoorDash</a> and <a href="https://www.ubereats.com/store/rosaritas-mexican-cantina-magnolia-ave/qvKx8sESTvGgPehbUWBeUg" rel="noopener">Uber Eats</a>.</p>
+      </div>
+
+      <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-platos" id="tab-platos">Platos fuertes</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-tacos" id="tab-tacos" tabindex="-1">Tacos y antojitos</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-mar" id="tab-mar" tabindex="-1">Del mar y cantina</button>
+      </div>
+
+      <div class="menu-panel" role="tabpanel" id="panel-platos" aria-labelledby="tab-platos">
+        <ul class="dish-list">
+          <li><h3>Steak fajitas</h3><p>The house specialty. Strips of steak with peppers and onions, brought out still sizzling.</p></li>
+          <li><h3>Chile colorado</h3><p>Slow-cooked beef in a deep red chile sauce, served with rice, beans and tortillas.</p></li>
+          <li><h3>Enchiladas Oaxaca</h3><p>Rolled enchiladas finished in the Oaxacan style, sauced and plated hot.</p></li>
+          <li><h3>Chimichanga</h3><p>A crisp fried burrito, filled and topped the traditional way.</p></li>
+          <li><h3>Carnitas</h3><p>Braised pork served with the usual company: rice, beans and fresh tortillas.</p></li>
+        </ul>
+      </div>
+
+      <div class="menu-panel" role="tabpanel" id="panel-tacos" aria-labelledby="tab-tacos" hidden>
+        <ul class="dish-list">
+          <li><h3>Street tacos</h3><p>Small doubled tortillas, cilantro and onion. Order them by the plate.</p></li>
+          <li><h3>Birria quesatacos</h3><p>Griddled tacos filled with birria and melted cheese, with consomé for dipping.</p></li>
+          <li><h3>Quesadilla fajita</h3><p>A loaded quesadilla built on the same sizzling fajita filling.</p></li>
+        </ul>
+      </div>
+
+      <div class="menu-panel" role="tabpanel" id="panel-mar" aria-labelledby="tab-mar" hidden>
+        <ul class="dish-list">
+          <li><h3>Shrimp cocktail</h3><p>Chilled shrimp in a bright tomato broth, Mexican style.</p></li>
+          <li><h3>Seafood dinners</h3><p>Shrimp and seafood plates, served as full dinners.</p></li>
+          <li><h3>Margaritas y sangría</h3><p>Poured at the bar for dine-in guests.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <div class="zigzag" aria-hidden="true"></div>
+    <section class="story">
+      <div class="story-inner">
+        <h2>New life on Magnolia</h2>
+        <p>Rosarita's opened in the spring of 2026 inside a building many Knoxvillians still remember as the old Long John Silver's at 2816 E Magnolia Avenue. It brought a full-service, sit-down Mexican kitchen back to this stretch of East Knoxville.</p>
+        <p>The neighborhood noticed. Within months of opening, the cantina was holding a 4.9 rating on Google.</p>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit">
+      <div class="visit-info">
+        <h2>Find the cantina</h2>
+        <address>
+          <a href="https://www.google.com/maps/place/Rosarita%27s+Mexican+Cantina/data=!4m7!3m6!1s0x885c17fc535056e7:0xd31eb623ca2e963c!8m2!3d35.9915177!4d-83.8893148!16s%2Fg%2F11y_pxnd3k" rel="noopener">2816 E Magnolia Ave<br>Knoxville, TN 37914</a>
+        </address>
+        <p class="visit-hours">Open every day, lunch through dinner. Closing times vary by night, so call ahead for today's hours.</p>
+        <a class="btn btn-solid" href="tel:+18659100687">Call to order</a>
+      </div>
+      <div class="visit-links">
+        <h3>Order in or stay home</h3>
+        <ul class="link-list">
+          <li><a href="https://www.doordash.com/store/rosaritas-mexican-cantina-knoxville-40740891/" rel="noopener">Delivery on DoorDash</a></li>
+          <li><a href="https://www.ubereats.com/store/rosaritas-mexican-cantina-magnolia-ave/qvKx8sESTvGgPehbUWBeUg" rel="noopener">Delivery on Uber Eats</a></li>
+          <li><a href="https://www.instagram.com/rosaritasmexican/" rel="noopener">Instagram, @rosaritasmexican</a></li>
+          <li><a href="https://www.facebook.com/people/Rosaritas-Mexican-Cantina/61585071908534/" rel="noopener">Facebook page</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Rosarita's Mexican Cantina · 2816 E Magnolia Ave, Knoxville, TN 37914 · <a href="tel:+18659100687">(865) 910-0687</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

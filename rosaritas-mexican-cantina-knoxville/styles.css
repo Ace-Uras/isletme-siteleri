@@ -1,0 +1,354 @@
+/* Rosarita's Mexican Cantina · hand-painted sign register, chile red on masa cream */
+
+:root {
+  --red: #b93a29;
+  --red-deep: #93291b;
+  --cream: #f6eedd;
+  --cream-soft: #efe3cc;
+  --ink: #2b1a13;
+  --ink-soft: #55403433;
+  --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Archivo", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px clamp(20px, 5vw, 64px);
+  border-bottom: 2px solid var(--ink);
+}
+
+.topbar-name {
+  font-family: "Alfa Slab One", serif;
+  font-size: 1.2rem;
+  color: var(--red);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topbar-phone {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 18px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topbar-phone:hover { background: var(--ink); color: var(--cream); }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-solid {
+  background: var(--red);
+  color: #fff;
+  border: 2px solid var(--red);
+}
+
+.btn-solid:hover { background: var(--red-deep); border-color: var(--red-deep); }
+
+.btn-line {
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn-line:hover { background: var(--ink); color: var(--cream); }
+
+/* ---------- hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(48px, 7vw, 96px) clamp(20px, 5vw, 64px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 18px;
+}
+
+.hero-sign svg { width: min(100%, 560px); height: auto; display: block; }
+
+.sign-text {
+  font-family: "Alfa Slab One", serif;
+  font-size: 92px;
+  fill: var(--red);
+  letter-spacing: 0.01em;
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  max-width: 44ch;
+  margin: 20px 0 30px;
+}
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* circular plate photo, echoing the red plate in the photo itself */
+
+.hero-plate { position: relative; justify-self: center; }
+
+.plate {
+  width: clamp(260px, 30vw, 400px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--ink);
+  box-shadow: 14px 14px 0 var(--red);
+}
+
+.plate img { width: 100%; height: 100%; object-fit: cover; }
+
+.plate-badge {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 50%;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(8deg);
+  line-height: 1.15;
+}
+
+.plate-badge strong {
+  font-family: "Alfa Slab One", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.plate-badge span { font-size: 0.68rem; letter-spacing: 0.04em; }
+
+/* ---------- menu ---------- */
+
+.menu {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 64px) clamp(64px, 8vw, 110px);
+}
+
+.menu-head h2,
+.story h2,
+.visit h2 {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.menu-head p { max-width: 58ch; }
+.menu-head a { color: var(--red-deep); font-weight: 600; }
+
+.menu-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px 0 8px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 14px;
+}
+
+.tab {
+  font-family: "Archivo", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: none;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 9px 20px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tab:hover { background: var(--cream-soft); }
+
+.tab.is-active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.dish-list { list-style: none; }
+
+.dish-list li {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 8px 28px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--ink-soft);
+}
+
+.dish-list li:last-child { border-bottom: none; }
+
+.dish-list h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.dish-list p { font-size: 0.97rem; max-width: 52ch; }
+
+/* ---------- zigzag divider + story ---------- */
+
+.zigzag {
+  height: 20px;
+  background: var(--ink);
+  clip-path: polygon(0 100%, 100% 100%, 100% 45%,
+    97.5% 100%, 95% 45%, 92.5% 100%, 90% 45%, 87.5% 100%, 85% 45%,
+    82.5% 100%, 80% 45%, 77.5% 100%, 75% 45%, 72.5% 100%, 70% 45%,
+    67.5% 100%, 65% 45%, 62.5% 100%, 60% 45%, 57.5% 100%, 55% 45%,
+    52.5% 100%, 50% 45%, 47.5% 100%, 45% 45%, 42.5% 100%, 40% 45%,
+    37.5% 100%, 35% 45%, 32.5% 100%, 30% 45%, 27.5% 100%, 25% 45%,
+    22.5% 100%, 20% 45%, 17.5% 100%, 15% 45%, 12.5% 100%, 10% 45%,
+    7.5% 100%, 5% 45%, 2.5% 100%, 0 45%);
+}
+
+.story { background: var(--ink); color: var(--cream); }
+
+.story-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 100px) clamp(20px, 5vw, 64px);
+}
+
+.story h2 { color: var(--cream); }
+.story p { margin-top: 16px; font-size: 1.05rem; }
+
+/* ---------- visit ---------- */
+
+.visit {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(32px, 5vw, 80px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 100px) clamp(20px, 5vw, 64px);
+}
+
+.visit address {
+  font-style: normal;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 6px 0 14px;
+}
+
+.visit address a { color: var(--red-deep); text-decoration-thickness: 2px; }
+
+.visit-hours { max-width: 46ch; margin-bottom: 26px; }
+
+.visit-links h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.link-list { list-style: none; }
+
+.link-list li { border-bottom: 1px dashed var(--ink-soft); }
+
+.link-list a {
+  display: block;
+  padding: 13px 2px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.link-list a:hover { color: var(--red-deep); padding-left: 8px; }
+
+/* ---------- footer ---------- */
+
+.footer {
+  border-top: 2px solid var(--ink);
+  padding: 22px clamp(20px, 5vw, 64px);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footer a { font-weight: 600; }
+
+/* ---------- reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .tab, .link-list a { transition: none; }
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-plate { justify-self: start; }
+  .visit { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .dish-list li { grid-template-columns: 1fr; gap: 4px; }
+  .plate-badge { width: 78px; height: 78px; top: -10px; right: 0; }
+  .plate-badge strong { font-size: 1.25rem; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+}
