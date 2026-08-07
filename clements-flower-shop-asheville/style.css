@@ -1,0 +1,392 @@
+/* Clements Flower Shop & Greenhouses — Asheville, NC
+   Palette drawn from the real storefront: awning red, white wood,
+   brick, evergreen. Warm paper background, no gradients-for-the-sake-of-it. */
+
+:root {
+  --paper: #faf6ee;
+  --ink: #2b2620;
+  --ink-soft: #5c554a;
+  --awning: #9d1f28;
+  --awning-deep: #7c161e;
+  --evergreen: #24402e;
+  --evergreen-deep: #1a3023;
+  --brick: #b0674f;
+  --line: rgba(43, 38, 32, 0.16);
+  --radius: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Karla", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--awning); text-underline-offset: 3px; }
+a:hover { color: var(--awning-deep); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: 10px 16px;
+  z-index: 100;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+/* ---------- Awning ---------- */
+
+.awning { position: relative; }
+
+.awning-canvas {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--awning) 0 72px,
+      var(--awning-deep) 72px 84px
+    );
+  padding: 26px 16px 20px;
+  text-align: center;
+}
+
+.awning-text {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  color: #fdf9f1;
+}
+
+/* Scalloped bottom edge, like the real awning */
+.awning-scallop {
+  height: 18px;
+  background-image: radial-gradient(circle at 50% 0, var(--awning) 17px, transparent 18px);
+  background-size: 36px 18px;
+  background-repeat: repeat-x;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 84px) 20px 28px;
+  text-align: center;
+}
+
+.masthead-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: 18px;
+}
+
+.masthead-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+}
+
+.masthead-title .amp {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--awning);
+}
+
+.masthead-sub {
+  max-width: 520px;
+  margin: 22px auto 0;
+  color: var(--ink-soft);
+  font-size: 1.125rem;
+}
+
+.masthead-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.masthead-rating {
+  margin-top: 22px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.masthead-rating .star { color: var(--awning); }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--evergreen);
+  color: #fdf9f1;
+}
+.btn-primary:hover { background: var(--evergreen-deep); color: #fff; }
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--ink);
+}
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+.btn-light {
+  background: rgba(253, 249, 241, 0.12);
+  border-color: rgba(253, 249, 241, 0.4);
+  color: #fdf9f1;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+}
+.btn-light:hover { background: rgba(253, 249, 241, 0.22); color: #fff; }
+
+/* ---------- Postcard ---------- */
+
+.postcard-band {
+  padding: clamp(28px, 5vw, 56px) 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.postcard {
+  background: #fff;
+  padding: 14px 14px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 14px 34px -18px rgba(43, 38, 32, 0.45);
+  transform: rotate(-1.2deg);
+  max-width: 480px;
+}
+
+.postcard img { border-radius: 2px; }
+
+.postcard figcaption {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* ---------- Section headings ---------- */
+
+.section-heading {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.15;
+}
+.section-heading em { color: var(--awning); }
+.section-heading.light { color: #fdf9f1; }
+.section-heading.light em { color: #e8b6ba; }
+
+/* ---------- Shop list ---------- */
+
+.shoplist { padding: clamp(40px, 7vw, 72px) 20px; }
+
+.shoplist-inner { max-width: 720px; margin: 0 auto; }
+
+.shoplist-rows {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.shoplist-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.shoplist-row:last-child { border-bottom: none; }
+
+.row-mark {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--brick);
+  flex: 0 0 auto;
+}
+
+.shoplist-row h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.shoplist-row p { color: var(--ink-soft); }
+
+/* ---------- Ordering ---------- */
+
+.ordering {
+  background: #f3ecdf;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(40px, 7vw, 72px) 20px;
+}
+
+.ordering-inner { max-width: 720px; margin: 0 auto; }
+
+.ordering-lede { color: var(--ink-soft); margin-top: 10px; }
+
+.steps {
+  margin: 28px 0 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 16px;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 52px;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--awning);
+  color: #fdf9f1;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Visit ---------- */
+
+.visit {
+  background: var(--evergreen);
+  color: #fdf9f1;
+  padding: clamp(48px, 8vw, 88px) 20px;
+}
+
+.visit-inner { max-width: 880px; margin: 0 auto; }
+
+.visit a { color: #fdf9f1; }
+.visit a:hover { color: #fff; }
+
+.visit-card {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 36px;
+}
+
+.visit-block h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(253, 249, 241, 0.65);
+  margin-bottom: 10px;
+}
+
+.visit-big {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.3;
+}
+
+.visit-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.visit-note {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  color: rgba(253, 249, 241, 0.75);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 34px 20px 40px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.footer-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+/* ---------- Reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.postcard.reveal.is-visible { transform: rotate(-1.2deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .postcard.reveal { transform: rotate(-1.2deg); }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .visit-card { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px) {
+  .visit-card { grid-template-columns: 1fr; gap: 28px; }
+  .awning-canvas { padding: 20px 12px 16px; }
+  .postcard { transform: rotate(-0.8deg); }
+  .postcard.reveal.is-visible { transform: rotate(-0.8deg); }
+}
+
+@media (max-width: 620px) and (prefers-reduced-motion: reduce) {
+  .postcard.reveal { transform: rotate(-0.8deg); }
+}
