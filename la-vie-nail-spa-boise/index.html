@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Vie Nail Spa | Boise, Idaho</title>
+<meta name="description" content="Family-owned nail salon on Overland and Cloverdale in Boise, Idaho. Manicures, pedicures, acrylics and nail art since 2016. Walk in or call (208) 932-9999.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="#top">La <span>Vie</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#care">Our care</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="topbar-call" href="tel:+12089329999">(208) 932-9999</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO: type block + info rail ============ -->
+  <section class="hero">
+    <div class="hero-type">
+      <p class="eyebrow">Nail salon &amp; spa · Boise, Idaho</p>
+      <h1>Take an hour<br>for your<span class="accent">self.</span></h1>
+      <p class="hero-lede">La Vie is a family-owned nail salon on the corner of Overland and Cloverdale. Manicures, pedicures, acrylics and nail art, done carefully, since 2016.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+12089329999">Call to book</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+      <div class="swatches" aria-hidden="true">
+        <span class="swatch s1"></span><span class="swatch s2"></span><span class="swatch s3"></span><span class="swatch s4"></span><span class="swatch s5"></span>
+      </div>
+    </div>
+    <aside class="hero-rail">
+      <div class="rail-item" id="open-chip-wrap">
+        <span class="chip" id="open-chip"><span class="chip-dot" aria-hidden="true"></span><span id="open-chip-text">Checking hours…</span></span>
+        <p class="rail-note" id="open-chip-note">Mon–Sat 9–7 · Sun 10–6</p>
+      </div>
+      <div class="rail-item">
+        <p class="rail-big">4.3<span class="rail-star" aria-hidden="true">★</span></p>
+        <p class="rail-note">on Google</p>
+      </div>
+      <div class="rail-item">
+        <p class="rail-big">2016</p>
+        <p class="rail-note">family-owned since</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ============ SERVICES + PRICE PICKER ============ -->
+  <section class="services arch-top" id="services">
+    <div class="section-head">
+      <h2>Pick your service</h2>
+      <p>Choose what you're coming in for and see the price before you sit down. Prices can change, so confirm when you book.</p>
+    </div>
+
+    <div class="picker" data-picker>
+      <fieldset class="picker-group">
+        <legend>Service</legend>
+        <label><input type="radio" name="svc" value="mani" checked><span>Manicure</span></label>
+        <label><input type="radio" name="svc" value="pedi"><span>Pedicure</span></label>
+        <label><input type="radio" name="svc" value="fullset"><span>Full set</span></label>
+        <label><input type="radio" name="svc" value="fillin"><span>Fill-in</span></label>
+      </fieldset>
+      <fieldset class="picker-group" id="finish-group">
+        <legend>Finish</legend>
+        <label><input type="radio" name="finish" value="regular" checked><span>Regular</span></label>
+        <label><input type="radio" name="finish" value="gel"><span>Gel</span></label>
+      </fieldset>
+      <div class="picker-result" aria-live="polite">
+        <p class="picker-price" id="picker-price">$25</p>
+        <p class="picker-label" id="picker-label">Regular manicure</p>
+        <a class="btn btn-solid btn-small" href="tel:+12089329999">Call to book this</a>
+      </div>
+    </div>
+
+    <ul class="extras">
+      <li>Nail design &amp; art</li>
+      <li>Gel polish soak-off</li>
+      <li>Color tips &amp; repairs</li>
+      <li>Polish exchanges</li>
+      <li>UV artificial nail removal</li>
+      <li>Essential &amp; deluxe upgrades</li>
+    </ul>
+    <p class="extras-note">Ask about pricing for these when you call or come in.</p>
+  </section>
+
+  <!-- ============ CARE / DETAILS ============ -->
+  <section class="care" id="care">
+    <div class="care-block">
+      <p class="care-num">01</p>
+      <h3>Made-fresh aromatherapy</h3>
+      <p>The aromatherapy treatments here are handmade and close to fully natural, prepared fresh for your visit.</p>
+    </div>
+    <div class="care-block">
+      <p class="care-num">02</p>
+      <h3>Clean, and serious about it</h3>
+      <p>Grade-A sanitation standards, every station, every visit. Licensed by the state of Idaho (license #559864).</p>
+    </div>
+    <div class="care-block">
+      <p class="care-num">03</p>
+      <h3>The same faces</h3>
+      <p>A family-owned shop where regulars ask for their tech by name. Clients come back to the person, not just the salon.</p>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS (real, quoted) ============ -->
+  <section class="reviews arch-top">
+    <h2 class="reviews-title">What regulars say</h2>
+    <div class="review-row">
+      <blockquote>
+        <p>&ldquo;Holly did a fabulous job.&rdquo;</p>
+        <footer>Google review, on an ombre set that held strong and drew compliments</footer>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;Polite, kind and helpful.&rdquo;</p>
+        <footer>Google review, on the front desk and the welcome</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit" id="visit">
+    <div class="visit-info">
+      <h2>Come by</h2>
+      <p class="visit-addr">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Vie+Nail+Spa+12160+W+Overland+Rd+Boise+ID+83709" target="_blank" rel="noopener">12160 W Overland Rd<br>Boise, ID 83709</a>
+      </p>
+      <p class="visit-sub">On the corner of Overland and Cloverdale.</p>
+      <div class="visit-contacts">
+        <a class="btn btn-light" href="tel:+12089329999">(208) 932-9999</a>
+        <a class="btn btn-light" href="tel:+12084732244">(208) 473-2244</a>
+        <a class="btn btn-light" href="mailto:lavieidaho@gmail.com">Email the salon</a>
+        <a class="btn btn-light" href="https://www.facebook.com/laviebeautyspa/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="visit-hours">
+      <h3>Hours</h3>
+      <table class="hours-table">
+        <tbody>
+          <tr data-days="mon-sat"><th scope="row">Monday – Saturday</th><td>9:00 AM – 7:00 PM</td></tr>
+          <tr data-days="sun"><th scope="row">Sunday</th><td>10:00 AM – 6:00 PM</td></tr>
+        </tbody>
+      </table>
+      <p class="hours-live" id="hours-live"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>La Vie Nail Spa · 12160 W Overland Rd, Boise, ID 83709 · <a href="tel:+12089329999">(208) 932-9999</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
