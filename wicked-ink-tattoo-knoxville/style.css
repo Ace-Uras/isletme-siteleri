@@ -1,0 +1,354 @@
+/* Wicked Ink Tattoo & Body Piercing, Knoxville TN
+   Dark night-shop theme, one accent (electric magenta), neon-sign signature. */
+
+:root {
+  --bg: #16101f;
+  --bg-raise: #1e1629;
+  --line: #3a2c4e;
+  --text: #eae4f2;
+  --text-dim: #b3a8c6;
+  --accent: #ff5fb0;
+  --accent-deep: #d63d8f;
+  --radius: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Hero: the neon window sign ---------- */
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 64px 24px 72px;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(255, 95, 176, 0.14), transparent 70%),
+    var(--bg);
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 28px;
+}
+
+.sign { display: block; }
+
+.tube {
+  font-family: "Tilt Neon", sans-serif;
+  font-weight: 400;
+  color: #ffd9ec;
+  text-shadow:
+    0 0 6px rgba(255, 95, 176, 0.9),
+    0 0 18px rgba(255, 95, 176, 0.6),
+    0 0 42px rgba(255, 95, 176, 0.35);
+}
+
+.tube-big {
+  display: block;
+  font-size: clamp(56px, 11vw, 122px);
+  line-height: 1.05;
+}
+
+.tube-small {
+  display: block;
+  font-size: clamp(17px, 2.6vw, 26px);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.55; }
+  5% { opacity: 1; }
+  7% { opacity: 0.7; }
+  9% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tube-big { animation: flicker 9s linear infinite; }
+}
+
+.lede {
+  max-width: 460px;
+  margin: 30px auto 0;
+  color: var(--text-dim);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-solid {
+  background: var(--accent);
+  color: #23091a;
+}
+
+.btn-solid:hover { background: var(--accent-deep); color: #fff; }
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+
+main { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+
+.section-title { margin-bottom: 36px; }
+
+.tube-heading {
+  font-family: "Tilt Neon", sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 42px);
+  color: #ffd9ec;
+  text-shadow:
+    0 0 6px rgba(255, 95, 176, 0.8),
+    0 0 20px rgba(255, 95, 176, 0.4);
+}
+
+/* ---------- Work / about ---------- */
+
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.work-photo img {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.work-photo figcaption {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 10px;
+}
+
+.work-copy h2 {
+  font-size: clamp(26px, 3.6vw, 36px);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.mark { color: var(--accent); }
+
+.work-copy p { margin-bottom: 16px; color: var(--text-dim); }
+
+.work-copy p:first-of-type { color: var(--text); }
+
+.text-link {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Services ---------- */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.service {
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+}
+
+.service h3 { font-size: 24px; margin-bottom: 6px; }
+
+.policy {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.service p:last-child { color: var(--text-dim); }
+
+/* ---------- Visit ---------- */
+
+.visit-list { max-width: 720px; }
+
+.visit-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.visit-row dt {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-top: 3px;
+}
+
+.visit-row dd { font-size: 18px; }
+
+.visit-row a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+.visit-row a:hover { color: var(--accent); }
+
+/* ---------- Booking ---------- */
+
+.booking-note { color: var(--text-dim); max-width: 520px; margin-bottom: 28px; }
+
+#idea-form {
+  max-width: 560px;
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+#idea-form fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+#idea-form legend {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 22px;
+  color: var(--text);
+}
+
+.radio input { accent-color: var(--accent); width: 17px; height: 17px; }
+
+.field {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#idea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+#idea::placeholder { color: #8d80a3; }
+
+#idea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.booking-alt { margin-top: 22px; color: var(--text-dim); }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  padding: 44px 24px 52px;
+  margin-top: 24px;
+}
+
+.foot-name {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 20px;
+  color: #ffd9ec;
+  text-shadow: 0 0 10px rgba(255, 95, 176, 0.5);
+  margin-bottom: 10px;
+}
+
+.foot-links { margin-bottom: 8px; }
+
+.foot-links a { color: var(--text-dim); }
+
+.foot-links a:hover { color: var(--accent); }
+
+.foot-links span { color: var(--line); margin: 0 6px; }
+
+.foot-small { font-size: 13px; color: #8d80a3; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .work {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .work-photo { max-width: 420px; }
+  .service-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 80vh; }
+  .hero-ctas .btn { width: 100%; text-align: center; }
+  .visit-row { grid-template-columns: 1fr; gap: 4px; }
+  section { padding: 56px 0; }
+}
