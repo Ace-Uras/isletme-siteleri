@@ -1,0 +1,13 @@
+Alıcı: pleasantnailsgr@yahoo.com
+Konu: A website for Pleasant Nails & Spa
+
+Hi,
+
+I'm Uras. I put together sample websites for small businesses that don't have one yet, no cost, no obligation, just to show what's possible. Pleasant Nails & Spa caught my eye while I was looking at nail salons in Grand Rapids: reviewers keep mentioning the color selection and how fast and clean the shop runs, but there's no website linked on the Google listing, just the Facebook page. So here's a working site, hosted free on GitHub Pages:
+
+https://ace-uras.github.io/isletme-siteleri/pleasant-nails-spa-grand-rapids/
+
+It's built from what's public: the hours, the address, the services, a photo of the shop floor, and a nail-art photo from your Google listing. I also worked in Hannah, Cindy, Dan, and Tammy, since reviewers ask for them by name. Happy to swap in your own photos or change anything if you want to run with it. If it's not for you, just ignore this and I won't send another.
+
+Take care,
+Uras
