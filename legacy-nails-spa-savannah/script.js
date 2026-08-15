@@ -1,42 +1,26 @@
-// Daisy line-art reveal on scroll
-const daisy = document.querySelector('.daisy-draw');
-if (daisy && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        daisy.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  observer.observe(daisy);
-} else if (daisy) {
-  daisy.classList.add('in-view');
-}
+// Findings reveal one at a time as they scroll into view (storytelling cue).
+const findings = document.querySelectorAll('.finding');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Photo lightbox
-const heroImg = document.getElementById('hero-img');
-const zoomBtn = document.getElementById('hero-zoom-btn');
-const lightbox = document.getElementById('lightbox');
-const closeBtn = document.getElementById('lightbox-close');
-
-function openLightbox() {
-  lightbox.hidden = false;
-  closeBtn.focus();
-}
-function closeLightbox() {
-  lightbox.hidden = true;
-  zoomBtn.focus();
-}
-
-if (zoomBtn) zoomBtn.addEventListener('click', openLightbox);
-if (heroImg) heroImg.addEventListener('click', openLightbox);
-if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-if (lightbox) {
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+if (findings.length && 'IntersectionObserver' in window && !prefersReducedMotion) {
+  findings.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity 0.6s cubic-bezier(0.32,0.72,0,1), transform 0.6s cubic-bezier(0.32,0.72,0,1)';
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  findings.forEach((el) => observer.observe(el));
 }
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
-});

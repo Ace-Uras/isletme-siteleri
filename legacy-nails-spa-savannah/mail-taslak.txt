@@ -1,0 +1,13 @@
+Alıcı: tdinh598@yahoo.com
+Konu: A website for Legacy Nails and Spa
+
+Hi,
+
+I'm Uras. I put together sample websites for small businesses that don't have one yet, no cost, no obligation, just to show what's possible. Legacy Nails and Spa caught my eye while I was looking at nail salons in Savannah: 4.5 stars, and no website linked on the Google listing. So here's a working site, hosted free on GitHub Pages:
+
+https://ace-uras.github.io/isletme-siteleri/legacy-nails-spa-savannah/
+
+It's built from what's public on your own listing: the address and one of the nail-art photos already posted there (the daisy set with the gold accents). Happy to swap in more of your own photos or change the layout if you want to run with it. If it's not for you, just ignore this and I won't send another.
+
+Take care,
+Uras
