@@ -1,0 +1,13 @@
+Alıcı: blomehairdressing@hotmail.co.uk
+Konu: A website for Blow Me Hairdressing
+
+Hi,
+
+I'm Uras. I put together sample websites for small businesses that don't have one yet, no cost, no obligation, just to show what's possible. Blow Me caught my eye while I was looking at Bristol hairdressers: 4.8 stars, and no website linked on the Google listing. So here's a working site, hosted free on GitHub Pages:
+
+https://ace-uras.github.io/isletme-siteleri/blow-me-hairdressing-bristol/
+
+It's built from what's public: the hours, the address, the services, and a photo of the salon (that sign looks great, by the way). Happy to swap in more of your own photos or change anything if you want to run with it. If it's not for you, just ignore this and I won't send another.
+
+Take care,
+Uras
