@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Whitt's True Tattoo & Piercings Collective, Knoxville TN</title>
+<meta name="description" content="Family-run tattoo and piercing studio in West Knoxville. Custom tattoos and Prickly Pixie Piercings, no attitude, no judgment." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #15110f;
+    --bg-raised: #1d1815;
+    --line: rgba(245, 238, 228, 0.12);
+    --ink: #f5eee4;
+    --ink-dim: rgba(245, 238, 228, 0.62);
+    --accent: #e2664a;
+    --accent-dim: rgba(226, 102, 74, 0.16);
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- nav ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(21, 17, 15, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+  }
+
+  .nav-links a { text-decoration: none; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #17110d;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- hero (editorial manifesto, no image) ---------- */
+  .hero {
+    padding: 88px 0 72px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero .wrap {
+    max-width: 760px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero p {
+    margin-top: 22px;
+    font-size: 1.08rem;
+    color: var(--ink-dim);
+    max-width: 46ch;
+  }
+
+  .hero .cta-row {
+    margin-top: 34px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #17110d;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.96rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.18s ease;
+  }
+
+  .btn-primary:active { transform: scale(0.98); }
+
+  .btn-ghost {
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.96rem;
+    text-decoration: none;
+    transition: border-color 0.18s ease, background 0.18s ease;
+  }
+
+  .btn-ghost:hover { border-color: rgba(245,238,228,0.35); background: var(--bg-raised); }
+
+  .hero .meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 22px;
+    font-size: 0.86rem;
+    color: var(--ink-dim);
+    flex-wrap: wrap;
+  }
+
+  .hero .meta strong { color: var(--ink); font-family: 'Space Grotesk', sans-serif; }
+
+  /* ---------- story (single column editorial) ---------- */
+  .story {
+    padding: 76px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .story .wrap { max-width: 700px; }
+
+  .story h2 {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .story p {
+    margin-top: 20px;
+    font-size: 1.04rem;
+    color: var(--ink-dim);
+    max-width: 62ch;
+  }
+
+  .story .stat-row {
+    margin-top: 34px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .stat-row .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .stat-row .stat-label {
+    font-size: 0.86rem;
+    color: var(--ink-dim);
+    margin-top: 2px;
+  }
+
+  /* ---------- services split ---------- */
+  .services {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-panel {
+    padding: 64px 40px;
+  }
+
+  .service-panel:first-child {
+    border-right: 1px solid var(--line);
+    background: var(--bg-raised);
+  }
+
+  .service-panel .tag {
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .service-panel h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .service-panel p {
+    margin-top: 14px;
+    color: var(--ink-dim);
+    font-size: 0.98rem;
+    max-width: 42ch;
+  }
+
+  .service-panel .price {
+    margin-top: 22px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+  }
+
+  .service-panel .price span {
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+    font-family: 'Work Sans', sans-serif;
+    display: block;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 720px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .service-panel:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+  }
+
+  /* ---------- visit strip ---------- */
+  .visit {
+    padding: 72px 0 80px;
+  }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+  }
+
+  .visit h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+
+  .visit-block { margin-top: 26px; }
+
+  .visit-block dt {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+  }
+
+  .visit-block dd {
+    margin-top: 4px;
+    font-size: 1.02rem;
+  }
+
+  .visit-block dd a { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.18s ease; }
+  .visit-block dd a:hover { border-color: var(--accent); }
+
+  .hours-card {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 30px;
+  }
+
+  .hours-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink-dim);
+    margin-bottom: 16px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    padding: 7px 0;
+  }
+
+  .hours-row + .hours-row { border-top: 1px solid var(--line); }
+
+  .hours-row span:last-child { color: var(--ink-dim); font-family: 'Space Grotesk', sans-serif; }
+
+  @media (max-width: 720px) {
+    .visit-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+  }
+
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+  }
+
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Whitt's <span>True Tattoo</span></div>
+    <div class="nav-links">
+      <a href="#story">Our story</a>
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="tel:+18658019291">Call to book</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Tattoos and piercings, <em>without the attitude.</em></h1>
+    <p>A family-run studio in West Knoxville. Walk in nervous, walk out proud, no judgment, just good work.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="tel:+18658019291">Call to book</a>
+      <a class="btn-ghost" href="#visit">See hours</a>
+    </div>
+    <div class="meta">
+      <span><strong>4.8</strong> rating</span>
+      <span>West Knoxville, TN</span>
+      <span>Walk-ins & appointments</span>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>Run by family, for the neighborhood.</h2>
+    <p>Angela Whitt took over the shop after her brother passed, and kept building it the way he started it: like family. That's still how it runs today, six tattoo artists and three piercing techs, and everyone who walks through the door gets treated like they belong here.</p>
+    <div class="stat-row">
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Tattoo artists</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Piercing techs</div>
+      </div>
+      <div>
+        <div class="stat-num">2011</div>
+        <div class="stat-label">Serving Knoxville since</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-grid">
+    <div class="service-panel">
+      <div class="tag">Tattoos</div>
+      <h3>Custom work, one design at a time</h3>
+      <p>Nay Nay and apprentice Vanna will sit with you on a design until it actually looks like what's in your head, not just what's easiest to draw.</p>
+    </div>
+    <div class="service-panel">
+      <div class="tag">Prickly Pixie Piercings</div>
+      <h3>The studio's own piercing bar</h3>
+      <p>Run right alongside the tattoo side, with straightforward pricing and no upsell games.</p>
+      <div class="price">$40 <span>one piercing</span></div>
+      <div class="price">$50 <span>two piercings</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div>
+        <h2>Come by, or call ahead</h2>
+        <dl class="visit-block">
+          <dt>Address</dt>
+          <dd><a href="https://www.google.com/maps/search/?api=1&query=5403+Western+Ave+%23103%2C+Knoxville%2C+TN+37921" target="_blank" rel="noopener">5403 Western Ave #103, Knoxville, TN 37921</a></dd>
+        </dl>
+        <dl class="visit-block">
+          <dt>Phone</dt>
+          <dd><a href="tel:+18658019291">(865) 801-9291</a></dd>
+        </dl>
+        <dl class="visit-block">
+          <dt>Online</dt>
+          <dd><a href="https://www.facebook.com/whittstruetattoo" target="_blank" rel="noopener">Facebook</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/whittstruetattoocollective/" target="_blank" rel="noopener">Instagram</a></dd>
+        </dl>
+      </div>
+      <div class="hours-card">
+        <h3>Hours</h3>
+        <div class="hours-row"><span>Monday - Thursday</span><span>1 - 9 PM</span></div>
+        <div class="hours-row"><span>Friday - Saturday</span><span>1 - 10 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>1 - 6 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Whitt's True Tattoo & Piercings Collective, Knoxville TN</span>
+    <a href="tel:+18658019291">(865) 801-9291</a>
+  </div>
+</footer>
+
+</body>
+</html>
