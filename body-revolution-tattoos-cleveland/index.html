@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Revolution Tattoos &amp; Body Piercings / Cleveland, OH</title>
+<meta name="description" content="Custom tattoo and piercing shop on Cleveland's West Side since 1999. Walk-ins welcome, no shop minimums, piercings starting at $20.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --panel:#121212;
+    --panel-2:#161616;
+    --fg:#eaeaea;
+    --fg-dim:#8a8a8a;
+    --line:rgba(234,234,234,0.16);
+    --line-strong:rgba(234,234,234,0.3);
+    --red:#ff2a2a;
+    --green:#4af626;
+  }
+  *{box-sizing:border-box; border-radius:0 !important;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px;}
+
+  /* static scanline texture, purely decorative, no motion */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    z-index:50;
+    background:repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.025),
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode:overlay;
+  }
+
+  /* ---------- header ---------- */
+  header.bar{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,10,10,0.92);
+    backdrop-filter:blur(2px);
+    border-bottom:1px solid var(--line-strong);
+  }
+  header.bar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+    gap:12px; flex-wrap:wrap;
+  }
+  .wordmark{
+    font-weight:700; letter-spacing:0.02em; font-size:0.95rem;
+    text-transform:uppercase;
+  }
+  .wordmark span{color:var(--red);}
+  .bar-links{display:flex; gap:18px; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;}
+  .bar-links a{text-decoration:none; border-bottom:1px solid transparent;}
+  .bar-links a:hover{border-bottom-color:var(--fg);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    border-bottom:1px solid var(--line-strong);
+    padding:64px 0 0 0;
+  }
+  .hero .wrap{position:relative;}
+  .eyebrow{
+    font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--fg-dim);
+    margin:0 0 22px 0;
+  }
+  .eyebrow::before{content:"[ "; color:var(--red);}
+  .eyebrow::after{content:" ]"; color:var(--red);}
+  h1.title{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:clamp(2.6rem, 9vw, 7.2rem);
+    line-height:0.94;
+    letter-spacing:-0.01em;
+    margin:0 0 26px 0;
+  }
+  h1.title em{
+    font-style:normal;
+    color:var(--red);
+    display:block;
+  }
+  .sub{
+    max-width:52ch;
+    font-size:clamp(0.95rem, 1.6vw, 1.1rem);
+    color:var(--fg-dim);
+    margin:0 0 34px 0;
+  }
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-bottom:0;
+  }
+  .btn{
+    display:inline-block;
+    border:1px solid var(--fg);
+    padding:14px 22px;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-weight:600;
+  }
+  .btn.primary{background:var(--red); border-color:var(--red); color:#0a0a0a;}
+  .btn.primary:hover{background:#ff5252;}
+  .btn.ghost:hover{background:var(--fg); color:#0a0a0a;}
+
+  .status-bar{
+    margin-top:40px;
+    border-top:1px solid var(--line-strong);
+    padding:14px 0;
+    display:flex; align-items:center; gap:10px;
+    font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .status-dot{width:8px; height:8px; background:var(--fg-dim); display:inline-block; flex:none;}
+  .status-dot.open{background:var(--green); box-shadow:0 0 6px var(--green);}
+  .status-dot.closed{background:var(--red); box-shadow:0 0 6px var(--red);}
+  #status-text.open{color:var(--green);}
+  #status-text.closed{color:var(--red);}
+
+  /* ---------- section shell ---------- */
+  section{border-bottom:1px solid var(--line-strong);}
+  .section-head{
+    padding:40px 0 0 0;
+    font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-dim);
+  }
+  .section-head::before{content:"// "; color:var(--red);}
+
+  /* ---------- dossier ---------- */
+  .dossier .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    margin-top:24px;
+  }
+  @media (max-width:760px){ .dossier .grid{grid-template-columns:1fr;} }
+  .dossier .cell{background:var(--bg); padding:28px 28px 40px;}
+  dl.specs{margin:0; display:grid; grid-template-columns:auto 1fr; gap:10px 18px;}
+  dl.specs dt{color:var(--fg-dim); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding-top:2px;}
+  dl.specs dd{margin:0; font-size:0.92rem;}
+  .field-notes p{font-size:0.92rem; color:var(--fg); margin:0 0 16px 0;}
+  .field-notes p:last-child{margin-bottom:0;}
+  .field-notes .tag{color:var(--red);}
+
+  .photo-panel{margin-top:34px; padding-top:0;}
+  .photo-frame{
+    position:relative;
+    border:1px solid var(--line-strong);
+    padding:14px;
+    display:inline-block;
+    max-width:100%;
+  }
+  .photo-frame img{
+    display:block;
+    max-width:280px;
+    width:100%;
+    height:auto;
+    filter:grayscale(1) contrast(1.15);
+    background:
+      radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px) 0 0/3px 3px,
+      #000;
+    mix-blend-mode:luminosity;
+  }
+  .photo-frame::before,
+  .photo-frame::after{
+    content:"+";
+    position:absolute; color:var(--red);
+    font-size:0.9rem; line-height:1;
+  }
+  .photo-frame::before{top:-6px; left:-6px;}
+  .photo-frame::after{bottom:-6px; right:-6px;}
+  .photo-cap{margin-top:10px; font-size:0.68rem; color:var(--fg-dim); letter-spacing:0.04em; max-width:280px;}
+
+  /* ---------- operations ---------- */
+  .ops-grid{
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:1px; background:var(--line); margin-top:24px; margin-bottom:40px;
+  }
+  @media (max-width:760px){ .ops-grid{grid-template-columns:1fr;} }
+  .op-cell{background:var(--bg); padding:26px 26px 30px;}
+  .op-index{font-size:0.72rem; color:var(--red); letter-spacing:0.1em; margin-bottom:10px;}
+  .op-title{font-weight:700; text-transform:uppercase; font-size:0.98rem; letter-spacing:0.02em; margin-bottom:10px;}
+  .op-desc{font-size:0.85rem; color:var(--fg-dim); margin:0;}
+
+  /* ---------- dispatch ---------- */
+  .dispatch-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:1px;
+    background:var(--line); margin-top:24px; margin-bottom:40px;
+  }
+  @media (max-width:760px){ .dispatch-grid{grid-template-columns:1fr;} }
+  .dispatch-cell{background:var(--bg); padding:28px;}
+  .coord-line{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.85rem;}
+  .coord-line:last-child{border-bottom:none;}
+  .coord-line .k{color:var(--fg-dim); text-transform:uppercase; letter-spacing:0.08em; font-size:0.7rem; padding-top:3px;}
+  .coord-line .v a{text-decoration:none; border-bottom:1px solid var(--line-strong);}
+  .coord-line .v a:hover{border-bottom-color:var(--fg);}
+  table.hours{width:100%; border-collapse:collapse; font-size:0.82rem;}
+  table.hours td{padding:7px 0; border-bottom:1px solid var(--line);}
+  table.hours tr:last-child td{border-bottom:none;}
+  table.hours td:first-child{color:var(--fg-dim); text-transform:uppercase; letter-spacing:0.06em; font-size:0.72rem;}
+  table.hours td:last-child{text-align:right;}
+  table.hours tr.today td{color:var(--green);}
+
+  /* ---------- footer ---------- */
+  footer{padding:34px 0 46px;}
+  .foot-row{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;}
+  .foot-mark{font-size:0.7rem; color:var(--fg-dim); letter-spacing:0.06em;}
+  .foot-mark strong{color:var(--fg);}
+  .foot-rating{font-size:0.7rem; color:var(--fg-dim); letter-spacing:0.06em; text-align:right;}
+  .foot-rating .num{color:var(--red); font-weight:700;}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="wordmark">BODY <span>REVOLUTION</span> ™</div>
+    <div class="bar-links">
+      <a href="tel:+12162511900">(216) 251-1900</a>
+      <a href="https://www.google.com/maps/place/Body+Revolution+Tattoos+%26+Body+Piercings/data=!4m7!3m6!1s0x8830edfd6c6b020f:0xb969f41875de4499!8m2!3d41.4585979!4d-81.779771!16s%2Fg%2F1tj6vglw!19sChIJDwJrbP3tMIgRmUTedRj0abk?authuser=0&amp;hl=tr&amp;rclk=1" target="_blank" rel="noopener">Directions</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Tattoo / Piercing / Cleveland, OH</p>
+    <h1 class="title">BODY<br><em>REVOLUTION</em></h1>
+    <p class="sub">Custom tattoo and piercing work on the West Side. Walk-ins welcome, no shop minimums, running since 1999.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="tel:+12162511900">Call (216) 251-1900</a>
+      <a class="btn ghost" href="https://www.google.com/maps/place/Body+Revolution+Tattoos+%26+Body+Piercings/data=!4m7!3m6!1s0x8830edfd6c6b020f:0xb969f41875de4499!8m2!3d41.4585979!4d-81.779771!16s%2Fg%2F1tj6vglw!19sChIJDwJrbP3tMIgRmUTedRj0abk?authuser=0&amp;hl=tr&amp;rclk=1" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <div class="status-bar">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-text">CHECKING SHOP STATUS…</span>
+    </div>
+  </div>
+</section>
+
+<section class="dossier">
+  <div class="wrap">
+    <p class="section-head">Shop Record</p>
+    <div class="grid">
+      <div class="cell">
+        <dl class="specs">
+          <dt>Name</dt><dd>Body Revolution Tattoos &amp; Body Piercings</dd>
+          <dt>Location</dt><dd>13014 Lorain Ave, Cleveland, OH 44111</dd>
+          <dt>Category</dt><dd>Tattoo &amp; Piercing Shop</dd>
+          <dt>Rating</dt><dd>4.6 / 5 (Google)</dd>
+          <dt>Established</dt><dd>1999</dd>
+        </dl>
+        <div class="photo-panel">
+          <div class="photo-frame">
+            <img src="fotograflar/foto-2.jpg" alt="Line-work tattoo of a cat face and a snarling animal face, photographed on the shop counter.">
+          </div>
+          <p class="photo-cap">Client work photographed at the shop. Line-work cat and snarling animal-face piece.</p>
+        </div>
+      </div>
+      <div class="cell field-notes">
+        <p>Open since 1999, Body Revolution has grown from this Lorain Ave location into a small Northeast Ohio operation with sister shops in Bedford and Elyria, a rare run for an independent tattoo shop on the West Side. <span class="tag">[ SOURCE: THREEBESTRATED / LOCALTATTOOS ]</span></p>
+        <p>What keeps showing up in customer reviews: work gets done fast and pricing stays fair compared to other studios in the area. <span class="tag">[ SOURCE: FACEBOOK / REDDIT ]</span></p>
+        <p>The shop also runs apprentice promotions: trainee artists get set up with tattoo or piercing slots for close to the cost of materials, which keeps new talent moving through the studio. <span class="tag">[ SOURCE: SHOP FACEBOOK ]</span></p>
+        <p>Per the shop's own Instagram: piercings start at $20, no shop minimums, same-day custom tattoos, walk-ins welcome. <span class="tag">[ SOURCE: @BODYREVOLUTION_TATTOOS ]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="operations">
+  <div class="wrap">
+    <p class="section-head">Operations</p>
+    <div class="ops-grid">
+      <div class="op-cell">
+        <div class="op-index">[ 01 ]</div>
+        <div class="op-title">Custom Tattoo Work</div>
+        <p class="op-desc">Same-day custom pieces. Bring a reference or work it out with the artist on the spot.</p>
+      </div>
+      <div class="op-cell">
+        <div class="op-index">[ 02 ]</div>
+        <div class="op-title">Piercing</div>
+        <p class="op-desc">Starting at $20. No shop minimums added on top.</p>
+      </div>
+      <div class="op-cell">
+        <div class="op-index">[ 03 ]</div>
+        <div class="op-title">Walk-Ins Welcome</div>
+        <p class="op-desc">No appointment required. Stop in during open hours.</p>
+      </div>
+      <div class="op-cell">
+        <div class="op-index">[ 04 ]</div>
+        <div class="op-title">Apprentice Program</div>
+        <p class="op-desc">Occasional promo slots with trainee artists, priced near the cost of materials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dispatch">
+  <div class="wrap">
+    <p class="section-head">Visit / Contact</p>
+    <div class="dispatch-grid">
+      <div class="dispatch-cell">
+        <div class="coord-line">
+          <span class="k">Address</span>
+          <span class="v"><a href="https://www.google.com/maps/place/Body+Revolution+Tattoos+%26+Body+Piercings/data=!4m7!3m6!1s0x8830edfd6c6b020f:0xb969f41875de4499!8m2!3d41.4585979!4d-81.779771!16s%2Fg%2F1tj6vglw!19sChIJDwJrbP3tMIgRmUTedRj0abk?authuser=0&amp;hl=tr&amp;rclk=1" target="_blank" rel="noopener">13014 Lorain Ave, Cleveland, OH 44111</a></span>
+        </div>
+        <div class="coord-line">
+          <span class="k">Phone</span>
+          <span class="v"><a href="tel:+12162511900">(216) 251-1900</a></span>
+        </div>
+        <div class="coord-line">
+          <span class="k">Category</span>
+          <span class="v">Tattoo &amp; Body Piercing</span>
+        </div>
+        <div class="coord-line">
+          <span class="k">Also In</span>
+          <span class="v">Bedford, OH &amp; Elyria, OH</span>
+        </div>
+      </div>
+      <div class="dispatch-cell">
+        <table class="hours" id="hours-table">
+          <tr data-day="1"><td>Mon</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="2"><td>Tue</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="3"><td>Wed</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="4"><td>Thu</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="5"><td>Fri</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="6"><td>Sat</td><td>12:00 – 8:00 PM</td></tr>
+          <tr data-day="0"><td>Sun</td><td>11:00 AM – 7:00 PM</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-mark">
+      <strong>BODY REVOLUTION TATTOOS &amp; BODY PIERCINGS</strong>™<br>
+      Cleveland, OH Unit / Lorain Ave &nbsp;///&nbsp; Est. 1999
+    </div>
+    <div class="foot-rating">
+      Google Rating <span class="num">4.6</span> / 5<br>
+      &copy; Body Revolution Tattoos &amp; Body Piercings
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // real hours, keyed to JS getDay() (0=Sun..6=Sat), values in minutes from midnight, America/New_York
+  var hours = {
+    0: [11*60, 19*60],       // Sun 11:00-19:00
+    1: [12*60, 20*60],       // Mon 12:00-20:00
+    2: [12*60, 20*60],
+    3: [12*60, 20*60],
+    4: [12*60, 20*60],
+    5: [12*60, 20*60],
+    6: [12*60, 20*60]        // Sat 12:00-20:00
+  };
+  var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  function nowInCleveland(){
+    var fmt = new Intl.DateTimeFormat('en-US', {
+      timeZone:'America/New_York',
+      weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false
+    });
+    var parts = fmt.formatToParts(new Date());
+    var map = {};
+    parts.forEach(function(p){ map[p.type] = p.value; });
+    var weekdayMap = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    var day = weekdayMap[map.weekday];
+    var h = parseInt(map.hour, 10);
+    var m = parseInt(map.minute, 10);
+    if (h === 24) h = 0;
+    return { day: day, minutes: h*60 + m };
+  }
+
+  function fmtTime(mins){
+    var h = Math.floor(mins/60), m = mins%60;
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    var h12 = h % 12; if (h12 === 0) h12 = 12;
+    return h12 + (m ? ':' + (m<10?'0':'') + m : '') + ' ' + ampm;
+  }
+
+  function updateStatus(){
+    var now = nowInCleveland();
+    var todays = hours[now.day];
+    var dot = document.getElementById('status-dot');
+    var text = document.getElementById('status-text');
+
+    if (todays && now.minutes >= todays[0] && now.minutes < todays[1]){
+      dot.className = 'status-dot open';
+      text.className = 'open';
+      text.textContent = 'STATUS: OPEN / CLOSES ' + fmtTime(todays[1]);
+    } else {
+      // find next opening
+      var d = now.day, mins = now.minutes, found = null, daysOut = 0;
+      for (var i=0; i<8; i++){
+        var check = hours[d];
+        if (check && (i > 0 || mins < check[0])){
+          found = { day:d, open:check[0] };
+          break;
+        }
+        d = (d+1) % 7;
+      }
+      dot.className = 'status-dot closed';
+      text.className = 'closed';
+      if (found){
+        var label = found.day === now.day ? 'TODAY' : dayNames[found.day].toUpperCase();
+        text.textContent = 'STATUS: CLOSED / OPENS ' + fmtTime(found.open) + ' ' + label;
+      } else {
+        text.textContent = 'STATUS: CLOSED';
+      }
+    }
+
+    // highlight today's row in hours table
+    var rows = document.querySelectorAll('#hours-table tr');
+    rows.forEach(function(r){
+      r.classList.toggle('today', parseInt(r.getAttribute('data-day'),10) === now.day);
+    });
+  }
+
+  updateStatus();
+  setInterval(updateStatus, 60000);
+})();
+</script>
+
+</body>
+</html>
