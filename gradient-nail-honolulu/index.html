@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Nail · Honolulu, HI</title>
+<meta name="description" content="Gradient Nail, a nail salon on Young St in Honolulu. Manicures and pedicures finished together, luxury pedicures, and detailed nail art. Call (808) 745-0588.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="nav-pill">
+    <span class="nav-mark">Gradient Nail</span>
+    <div class="nav-links">
+      <a href="#craft">The work</a>
+      <a href="#team">Hands</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a class="nav-call" href="tel:+18087450588">
+      <span>(808) 745-0588</span>
+      <span class="nav-call-icon">↗</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Young Street · Honolulu</span>
+      <h1>Two chairs.<br><em>One</em> visit.</h1>
+      <p class="hero-sub">
+        A neighborhood nail salon on Young Street, known around Honolulu less for advertising
+        and more for word of mouth. 4.6 stars, no marketing budget to speak of.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:+18087450588">
+          <span>Call to book</span>
+          <span class="btn-icon">↗</span>
+        </a>
+        <div class="rating-chip">
+          <span class="rating-num">4.6</span>
+          <span class="rating-label">Google rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-frame reveal">
+      <div class="bezel-outer">
+        <div class="bezel-inner bezel-type">
+          <span class="bezel-eyebrow">At a glance</span>
+          <span class="bezel-num">4.6<small>★</small></span>
+          <span class="bezel-line"></span>
+          <span class="bezel-detail">Two techs per visit<br>Mon–Sat 9:30–7<br>Sun 10:30–5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="craft" id="craft">
+    <div class="craft-head reveal">
+      <span class="eyebrow eyebrow-dark">How it works</span>
+      <h2>Manicure and pedicure,<br>at the same time.</h2>
+    </div>
+    <div class="craft-grid">
+      <div class="craft-item reveal">
+        <span class="craft-num">01</span>
+        <h3>Two technicians, one appointment</h3>
+        <p>Regulars mention this first: instead of waiting through a manicure before a pedicure
+          can start, two technicians work at once. Same visit, half the chair time.</p>
+      </div>
+      <div class="craft-item reveal">
+        <span class="craft-num">02</span>
+        <h3>Pedicures that don't rush the callus work</h3>
+        <p>The luxury pedicure isn't a quick buff and polish. Callus care gets real attention,
+          not a step skipped to move to the next chair.</p>
+      </div>
+      <div class="craft-item reveal">
+        <span class="craft-num">03</span>
+        <h3>Ombré, rhinestone, detail work</h3>
+        <p>Beyond a standard set, the shop is known for ombré fades and rhinestone detailing:
+          the kind of nail art that takes a steadier hand than a quick fill.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="team-inner">
+      <span class="eyebrow eyebrow-dark">Behind the work</span>
+      <h2>The names that come up in the reviews</h2>
+      <p class="team-sub">Jenny, Lily, Yen, and Anna: mentioned again and again for careful shaping,
+        even on fragile or damaged nails, and for taking the time a detail needs.</p>
+      <div class="team-names">
+        <span>Jenny</span>
+        <span>Lily</span>
+        <span>Yen</span>
+        <span>Anna</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="visit-grid">
+      <div class="visit-info reveal">
+        <span class="eyebrow">Visit</span>
+        <h2>1436 Young St,<br>Suite 101</h2>
+        <a class="visit-link" href="https://www.google.com/maps/place/Gradient+Nail/data=!4m7!3m6!1s0x7c006deef5c113ef:0x2e152d442f3af009!8m2!3d21.2991635!4d-157.8387097!16s%2Fg%2F11c1xhbww4!19sChIJ7xPB9e5tAHwRCfA6L0QtFS4?authuser=0&hl=tr&g_ep=EgoyMDI2MDgyMy4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">
+          Open in Google Maps ↗
+        </a>
+        <a class="visit-phone" href="tel:+18087450588">(808) 745-0588</a>
+      </div>
+      <div class="visit-hours reveal">
+        <div class="status-line">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking hours…</span>
+        </div>
+        <table class="hours-table" id="hoursTable">
+          <tr data-day="1"><td>Monday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="2"><td>Tuesday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="3"><td>Wednesday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="4"><td>Thursday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="5"><td>Friday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="6"><td>Saturday</td><td>9:30 AM – 7:00 PM</td></tr>
+          <tr data-day="0"><td>Sunday</td><td>10:30 AM – 5:00 PM</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>Gradient Nail · 1436 Young St Ste 101, Honolulu, HI 96814</span>
+  <span>Built from what's public on Google. Send your own photos to swap in.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
