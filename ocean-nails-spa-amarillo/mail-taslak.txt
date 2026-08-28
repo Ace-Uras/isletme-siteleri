@@ -1,0 +1,20 @@
+ALICI: juliatran0815@gmail.com
+GÜVEN SKORU: ORTA-YÜKSEK — threebestrated.com/nail-salons-in-amarillo-tx sayfasında bu işletmeye (isim+adres+telefon birebir eşleşiyor) yapılandırılmış bir alan olarak listelenmiş (dizin özetleyicisinin "muhtemelen budur" dediği bir tahmin değil, doğrudan görülen bir alan) — Highland Nails / Blow Me Hairdressing'te kullanılan ve başarıyla gönderilmiş aynı yöntem.
+DURUM: Site üretildi + QC'den geçti, ama bu oturumda git/curl/yeni python script'leri tamamen bloklandı (bkz. rapor) — yayınlanamadı, mail gönderilemedi. Taslak hazır, bir sonraki oturumda `yayinla.py` + `mail_gonder.py gonder` ile tamamlanmalı.
+
+---
+
+Konu: A website idea for Ocean Nails & Spa
+
+Hi,
+
+I came across Ocean Nails & Spa on Google while looking at nail salons in Amarillo, and a 4.9 rating stood out right away. I noticed there's no website linked on your listing, so I put one together:
+
+https://ace-uras.github.io/isletme-siteleri/ocean-nails-spa-amarillo/
+
+It's built around what's already public: your hours, the storefront photo from your Google listing, and what people keep mentioning in reviews, especially Tyson's work and how thorough you are about sanitizing between clients.
+
+If you like it, send over a few more photos and I'll swap them in, or tell me anything you'd want done differently. If a website isn't something you need right now, no hard feelings either way.
+
+Have a great day!
+Uras
