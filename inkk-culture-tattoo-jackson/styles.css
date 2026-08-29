@@ -1,0 +1,451 @@
+/* Inkk Culture Tattoo, Jackson, MS
+   Palette derived from the shop's own signage: backlit violet neon sign,
+   gold ornate floor logo, near-black walls, white marble tile. */
+
+:root {
+  --bg: #141016;
+  --bg-alt: #1d1721;
+  --bg-alt-2: #241b2c;
+  --line: rgba(246, 243, 239, 0.12);
+  --text: #f6f3ef;
+  --text-dim: #c7c0cb;
+  --text-faint: #93899b;
+  --violet: #b06bf2;
+  --violet-strong: #9a3ff0;
+  --gold: #cda754;
+  --radius: 2px;
+  --font-display: 'Unbounded', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  background: linear-gradient(to bottom, rgba(20, 16, 22, 0.9), transparent);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.header-cta {
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  border-color: var(--violet);
+  background: rgba(176, 107, 242, 0.12);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn--primary {
+  background: var(--violet-strong);
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--violet);
+}
+
+.btn--ghost {
+  border-color: rgba(246, 243, 239, 0.35);
+  color: var(--text);
+  background: rgba(20, 16, 22, 0.35);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: var(--text);
+  background: rgba(246, 243, 239, 0.08);
+}
+
+.btn--wide { width: 100%; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 40%;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(15, 11, 18, 0.96) 8%, rgba(15, 11, 18, 0.55) 48%, rgba(20, 12, 26, 0.35) 100%),
+    linear-gradient(to right, rgba(15, 11, 18, 0.55) 0%, rgba(15, 11, 18, 0.15) 55%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(6rem, 14vw, 8rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vw, 4.5rem);
+}
+
+.hero__place {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  max-width: 14ch;
+  margin-bottom: 1.1rem;
+}
+
+.hero__sub {
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hero__rating-num {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- Oath (founding story) ---------- */
+
+.oath {
+  background: var(--bg-alt);
+  padding: clamp(4.5rem, 10vw, 7rem) clamp(1.25rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.oath__inner {
+  max-width: 62ch;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.oath__eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.oath__title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 1.4rem;
+}
+
+.oath__body {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 58ch;
+}
+
+/* ---------- Hands (craft) ---------- */
+
+.hands {
+  padding: clamp(4.5rem, 10vw, 7rem) clamp(1.25rem, 4vw, 3rem);
+}
+
+.hands__grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 1.25rem;
+}
+
+.hands__tile {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.hands__tile h3 {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.hands__tile p {
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.hands__tile--lead {
+  grid-row: 1 / 3;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(176, 107, 242, 0.22), transparent 55%),
+    var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hands__tile--lead h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); }
+
+.hands__grid .hands__tile:nth-child(2) {
+  background: var(--bg-alt-2);
+}
+
+.hands__grid .hands__tile:nth-child(3) {
+  background: var(--bg-alt);
+}
+
+/* ---------- Door (visit) ---------- */
+
+.door {
+  background: var(--bg-alt);
+  padding: clamp(4.5rem, 10vw, 7rem) clamp(1.25rem, 4vw, 3rem) clamp(5rem, 10vw, 7rem);
+  border-top: 1px solid var(--line);
+}
+
+.door__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.door__title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-bottom: 1.1rem;
+}
+
+.door__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+  color: var(--text-dim);
+}
+
+.door__status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.door__status.is-open::before { background: #52d17c; }
+.door__status.is-closed::before { background: #e05a5a; }
+
+.door__hours {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.door__hours tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.door__hours tr:last-child { border-bottom: none; }
+
+.door__hours th,
+.door__hours td {
+  text-align: left;
+  padding: 0.65rem 0;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.door__hours th {
+  font-weight: 600;
+  color: var(--text);
+  width: 40%;
+}
+
+.door__hours tr.is-today th,
+.door__hours tr.is-today td {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.door__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.door__addr {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition: color 0.25s ease;
+}
+
+.door__addr:hover,
+.door__addr:focus-visible {
+  color: var(--violet);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 2rem clamp(1.25rem, 4vw, 3rem);
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.oath__inner,
+.hands__tile,
+.door__inner {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.oath__inner.is-visible,
+.hands__tile.is-visible,
+.door__inner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oath__inner,
+  .hands__tile,
+  .door__inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .hero__content { padding-top: 6rem; }
+  .hero__title { max-width: 100%; }
+
+  .hands__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .hands__tile--lead { grid-row: auto; }
+
+  .door__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .header-cta { font-size: 0.8rem; padding: 0.45rem 0.75rem; }
+}
