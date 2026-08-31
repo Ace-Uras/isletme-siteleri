@@ -1,0 +1,403 @@
+/* Kreations Tattoos & Body Piercing — Huntsville, AL
+   Palette: warm paper + ink + aged brass + oxblood (heritage / atelier, not neon-grunge tattoo cliché) */
+
+:root {
+  --paper: #f6f1e6;
+  --paper-alt: #efe6d3;
+  --ink: #1c1712;
+  --ink-soft: #4a3f33;
+  --muted: #776b58;
+  --brass: #a97c3e;
+  --brass-deep: #7c5a2c;
+  --oxblood: #6e1f26;
+  --border: #ddd0b3;
+  --card: #fffdf8;
+
+  --font-display: "Spectral", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, sans-serif;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.kicker {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass-deep);
+  margin-bottom: var(--space-2);
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+em { font-style: italic; color: var(--oxblood); }
+
+/* ---------- Topbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background: rgba(246, 241, 230, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar__mark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.topbar__call {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  padding: 7px 16px;
+  transition: background 200ms ease, color 200ms ease;
+}
+.topbar__call:hover { background: var(--brass); color: var(--paper); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3) var(--space-5);
+  text-align: center;
+}
+.hero__rule {
+  width: 56px;
+  height: 3px;
+  background: var(--brass);
+  margin: 0 auto var(--space-3);
+}
+.hero__eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 var(--space-2);
+}
+.hero__title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-3);
+}
+.hero__sub {
+  max-width: 560px;
+  margin: 0 auto var(--space-4);
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.pill--status.is-open { color: #2f5d3a; border-color: #b9d4bd; background: #eef6ef; }
+.pill--status.is-open::before { content: "●"; color: #3f8f52; font-size: 0.7em; }
+.pill--status.is-closed { color: var(--oxblood); border-color: #e3c3c6; background: #fbeeee; }
+.pill--status.is-closed::before { content: "●"; color: var(--oxblood); font-size: 0.7em; }
+.pill--status-lg { font-size: 0.95rem; padding: 9px 20px; }
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 28px;
+  border-radius: 4px;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+  cursor: pointer;
+}
+.btn--primary { background: var(--ink); color: var(--paper); }
+.btn--primary:hover { background: var(--oxblood); transform: translateY(-1px); }
+.btn--ghost { border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Heritage ---------- */
+.heritage {
+  background: var(--paper-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-6) var(--space-3);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.heritage__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+.heritage__lead h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.2;
+}
+.heritage__body p {
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-2);
+  max-width: 60ch;
+}
+.heritage__body strong { color: var(--ink); }
+.heritage__plaque {
+  justify-self: center;
+  text-align: center;
+  border: 2px solid var(--brass);
+  border-radius: 6px;
+  padding: var(--space-3) var(--space-5);
+  background: var(--card);
+}
+.heritage__plaque-year {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  color: var(--brass-deep);
+  line-height: 1;
+}
+.heritage__plaque-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (min-width: 860px) {
+  .heritage__grid { grid-template-columns: 1fr 1.2fr; align-items: start; }
+}
+
+/* ---------- Showcase ---------- */
+.showcase {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+.showcase__frame {
+  margin: 0;
+  border: 10px solid var(--card);
+  outline: 1px solid var(--border);
+  box-shadow: 0 24px 48px -24px rgba(28, 23, 18, 0.35);
+}
+.showcase__frame img {
+  width: 100%;
+  height: auto;
+  filter: sepia(6%) contrast(1.03);
+}
+.showcase__frame figcaption {
+  padding: var(--space-2) var(--space-1) 0;
+}
+.showcase__tag {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass-deep);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.showcase__desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.showcase__copy h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: var(--space-2);
+  line-height: 1.25;
+}
+.showcase__copy p {
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-3);
+}
+.showcase__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.showcase__list li {
+  padding-left: 22px;
+  position: relative;
+  color: var(--ink);
+  font-weight: 500;
+}
+.showcase__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background: var(--brass);
+}
+
+@media (min-width: 900px) {
+  .showcase { grid-template-columns: 1.1fr 1fr; }
+}
+
+/* ---------- Trust ---------- */
+.trust {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-6) var(--space-3);
+}
+.trust__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.trust .kicker { color: #d8b483; }
+.trust h2 {
+  color: var(--paper);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  margin-bottom: var(--space-2);
+}
+.trust__lede {
+  color: #cfc4b1;
+  max-width: 56ch;
+  margin: 0 auto var(--space-5);
+}
+.trust__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+.trust__item {
+  border-top: 1px solid rgba(246, 241, 230, 0.25);
+  padding-top: var(--space-2);
+}
+.trust__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: #e2c08c;
+}
+.trust__cap {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: #b9ac97;
+}
+
+@media (max-width: 640px) {
+  .trust__row { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+
+/* ---------- Hours / Visit ---------- */
+.hours {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+.hours__col h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: var(--space-3);
+}
+.hours__address a, .hours__phone a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.hours__address a:hover, .hours__phone a:hover { color: var(--brass-deep); }
+.hours__phone { font-size: 1.15rem; margin-top: 4px; }
+.hours__col .pill { margin-top: var(--space-3); }
+
+.hours__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.hours__table th, .hours__table td {
+  text-align: left;
+  padding: 12px 18px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.hours__table tr:last-child th, .hours__table tr:last-child td { border-bottom: none; }
+.hours__table th { color: var(--ink-soft); font-weight: 500; }
+.hours__table td { text-align: right; color: var(--ink); font-weight: 600; }
+.hours__table tr.is-today { background: var(--paper-alt); }
+.hours__table tr.is-today th, .hours__table tr.is-today td { color: var(--brass-deep); }
+
+@media (min-width: 860px) {
+  .hours { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: var(--space-4) var(--space-3) var(--space-5);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.footer p { margin: 4px 0; }
+.footer__note { font-size: 0.78rem; opacity: 0.8; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
