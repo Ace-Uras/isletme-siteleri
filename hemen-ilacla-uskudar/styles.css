@@ -271,15 +271,25 @@ p {
   align-items: center;
   gap: 10px;
   font-weight: 800;
-  font-size: 1.12rem;
+  font-size: 1.02rem;
   letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--ink);
+  white-space: nowrap;
 }
-.logo-img {
-  height: 38px;
-  width: auto;
-  display: block;
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.logo-mark svg {
+  width: 19px;
+  height: 19px;
 }
 nav.primary-nav {
   display: flex;
@@ -1052,9 +1062,7 @@ footer.site-footer {
 }
 .footer-brand .logo {
   margin-bottom: 14px;
-}
-.footer-brand .logo-img {
-  height: 46px;
+  font-size: 1.1rem;
 }
 .footer-brand p {
   color: var(--ink-soft);
