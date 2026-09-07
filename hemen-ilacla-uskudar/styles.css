@@ -107,17 +107,17 @@
 
 /* ===== Tokens ===== */
 :root {
-  --bg: #f5f9f9;
-  --bg-alt: #e8f1f1;
+  --bg: #ffffff;
+  --bg-alt: #f4f6f6;
   --surface: #ffffff;
   --ink: #0e1618;
   --ink-soft: #4c6062;
   --ink-faint: #7c9092;
   --accent: #0e7c86;
   --accent-strong: #0a5e66;
-  --accent-soft: #dcefef;
+  --accent-soft: #e2f0f0;
   --accent-ink: #ffffff;
-  --line: #d6e5e5;
+  --line: #dde3e3;
   --shadow: 0 20px 44px -28px rgba(14, 40, 43, 0.35);
   --radius-card: 18px;
   --radius-pill: 999px;
