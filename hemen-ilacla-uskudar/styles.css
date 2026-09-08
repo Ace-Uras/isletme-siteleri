@@ -368,9 +368,23 @@ nav.primary-nav a:hover {
     font-size: 0.94rem;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .logo-text {
-    display: none;
+    font-size: 0.82rem;
+  }
+  .logo-mark {
+    height: 34px;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-actions .btn-primary {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
   }
 }
 
