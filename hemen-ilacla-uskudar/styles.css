@@ -356,6 +356,14 @@ nav.primary-nav a:hover {
   .header-actions .btn-ghost {
     display: none;
   }
+  .logo-text {
+    font-size: 0.94rem;
+  }
+}
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
 }
 
 /* ===== Hero ===== */
