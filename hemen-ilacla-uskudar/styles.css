@@ -437,62 +437,19 @@ nav.primary-nav a:hover {
 }
 .hero-visual {
   position: relative;
-  aspect-ratio: 1 / 1;
-  display: grid;
-  place-items: center;
 }
-.radar {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-}
-.radar circle {
-  fill: none;
-  stroke: var(--accent);
-  opacity: 0.16;
-}
-.radar .ring-2 {
-  opacity: 0.24;
-}
-.radar .ring-3 {
-  opacity: 0.34;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .radar .pulse {
-    transform-origin: center;
-    animation: radar-pulse 3.6s ease-out infinite;
-  }
-  .radar .pulse-2 {
-    animation-delay: 1.2s;
-  }
-  .radar .pulse-3 {
-    animation-delay: 2.4s;
-  }
-}
-@keyframes radar-pulse {
-  0% {
-    transform: scale(0.55);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.05);
-    opacity: 0;
-  }
-}
-.hero-badge {
+.hero-photo-frame {
   position: relative;
-  width: 148px;
-  height: 148px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  place-items: center;
+  border-radius: 28px;
+  overflow: hidden;
   box-shadow: var(--shadow);
+  aspect-ratio: 4 / 5;
 }
-.hero-badge .icon {
-  width: 60px;
-  height: 60px;
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .hero-chip {
   position: absolute;
@@ -528,7 +485,6 @@ nav.primary-nav a:hover {
   .hero-visual {
     max-width: 320px;
     margin: 0 auto;
-    aspect-ratio: 1 / 1;
   }
 }
 
