@@ -278,18 +278,10 @@ p {
   white-space: nowrap;
 }
 .logo-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  place-items: center;
+  height: 42px;
+  width: auto;
   flex-shrink: 0;
-}
-.logo-mark svg {
-  width: 19px;
-  height: 19px;
+  display: block;
 }
 nav.primary-nav {
   display: flex;
