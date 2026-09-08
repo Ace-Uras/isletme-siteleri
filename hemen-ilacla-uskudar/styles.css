@@ -1170,7 +1170,7 @@ footer.site-footer {
   height: 54px;
   border-radius: var(--radius-pill);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: #ffffff;
   display: grid;
   place-items: center;
   box-shadow: var(--shadow);
@@ -1188,8 +1188,17 @@ footer.site-footer {
   width: 24px;
   height: 24px;
 }
+.float-btn.is-whatsapp {
+  background: #25d366;
+}
+.float-btn.is-whatsapp:hover {
+  background: #1fb959;
+}
 .float-btn.is-primary {
-  background: var(--ink);
+  background: #2563eb;
+}
+.float-btn.is-primary:hover {
+  background: #1d4fd1;
 }
 @media (max-width: 640px) {
   .float-actions {
