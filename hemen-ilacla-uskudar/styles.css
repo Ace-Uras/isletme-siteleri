@@ -113,12 +113,12 @@
   --ink: #0e1618;
   --ink-soft: #4c6062;
   --ink-faint: #7c9092;
-  --accent: #0e7c86;
-  --accent-strong: #0a5e66;
-  --accent-soft: #e2f0f0;
+  --accent: #d4222c;
+  --accent-strong: #a81920;
+  --accent-soft: #fbeaea;
   --accent-ink: #ffffff;
   --line: #dde3e3;
-  --shadow: 0 20px 44px -28px rgba(14, 40, 43, 0.35);
+  --shadow: 0 20px 44px -28px rgba(80, 16, 18, 0.35);
   --radius-card: 18px;
   --radius-pill: 999px;
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
