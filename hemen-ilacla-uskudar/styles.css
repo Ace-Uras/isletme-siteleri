@@ -236,6 +236,18 @@ p {
   background: var(--accent-strong);
   transform: translateY(-1px);
 }
+.btn.btn-call {
+  background: #2563eb;
+}
+.btn.btn-call:hover {
+  background: #1d4fd1;
+}
+.btn.btn-whatsapp {
+  background: #25d366;
+}
+.btn.btn-whatsapp:hover {
+  background: #1fb959;
+}
 .btn-ghost {
   background: transparent;
   border-color: var(--line);
