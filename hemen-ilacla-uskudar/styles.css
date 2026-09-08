@@ -275,13 +275,20 @@ p {
   letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--ink);
-  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
 }
 .logo-mark {
   height: 42px;
   width: auto;
   flex-shrink: 0;
   display: block;
+}
+.logo-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 nav.primary-nav {
   display: flex;
@@ -302,6 +309,7 @@ nav.primary-nav a:hover {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 .header-actions .btn {
   padding: 11px 20px;
